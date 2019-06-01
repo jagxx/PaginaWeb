@@ -62,8 +62,7 @@
 					<div class="container clearfix">
 							<div id="logo">
 									<a href="index.html" class="standard-logo" data-sticky-logo="demos/media-agency/images/logo-media@2x.png" 
-									data-mobile-logo="demos/media-agency/images/logo-media@2x.png"><img src="images/new.png" 
-									alt="JaguarX Logo" style="height: 50%; width: 50%; top: 50px; animation-duration: 1.5s; padding-top: 8%;"></a>
+									data-mobile-logo="demos/media-agency/images/logo-media@2x.png"><H1>JAGUAR X</H1></a>
 								</div>
 						<!-- Logo
 					============================================= -->
@@ -109,7 +108,7 @@
 				<div class="swiper-wrapper">
 					<div class="swiper-slide" style="background-image: url('demos/construction/images/4.jpg'); background-position: center top;">
 						<div class="container clearfix">
-							<div class="slider-caption slider-caption-right">
+							<div class="slider-caption">
 								<h2>Bienvenido a JaguarX</h2>
 								<p>Somos expertos en desarrollo web y Aplicaciones móviles. Nos ajustamos a tus necesidades y utilizamos las mejores tecnologías para la mejor optimización de tu producto.</p>
 							</div>
@@ -138,6 +137,10 @@
 
 			<script>
 				jQuery(document).ready(function($){
+					setInterval(function () {
+        			moveRight();
+    				}, 7000);
+
 					var swiperSlider = new Swiper('.swiper-parent',{
 						paginationClickable: false,
 						slidesPerView: 1,
@@ -148,8 +151,8 @@
 							$('[data-caption-animate]').each(function(){
 								var $toAnimateElement = $(this);
 								var toAnimateDelay = $(this).attr('data-caption-delay');
-								var toAnimateDelayTime = 0;
-								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 750; } else { toAnimateDelayTime = 750; }
+								var toAnimateDelayTime = 1500;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 1750; } else { toAnimateDelayTime = 1750; }
 								if( !$toAnimateElement.hasClass('animated') ) {
 									$toAnimateElement.addClass('not-animated');
 									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
@@ -182,7 +185,7 @@
 							$('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function(){
 								var $toAnimateElement = $(this);
 								var toAnimateDelay = $(this).attr('data-caption-delay');
-								var toAnimateDelayTime = 0;
+								var toAnimateDelayTime = 1500;
 								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 300; } else { toAnimateDelayTime = 300; }
 								if( !$toAnimateElement.hasClass('animated') ) {
 									$toAnimateElement.addClass('not-animated');
@@ -200,6 +203,10 @@
 						swiperSlider.swipePrev();
 					});
 
+					function moveRight() {
+						swiperSlider.swipeNext();
+    				};
+
 					$('#slider-arrow-right').on('click', function(e){
 						e.preventDefault();
 						swiperSlider.swipeNext();
@@ -215,7 +222,7 @@
 
 			<div class="content-wrap">
 
-				<div class="promo promo-light promo-full uppercase bottommargin-lg header-stick">
+				<div class="promo promo-light promo-full uppercase header-stick">
 					<div class="container clearfix">
 						<h3 style="letter-spacing: 2px;">Página web, tienda en línea, creación de blogs, aplicaciones móviles y todo lo que busques aquí.</h3>
 						<span>Nos esforzamos para proporcionar a nuestros clientes apoyo de primera clase para el desarrollo de su idea.</span>
@@ -225,7 +232,7 @@
 				<br>
 				<br>
 
-				<div class="container clearfix">
+				<div class="container clearfix" style="bottom:18px">
 
 					<div class="col_one_third nobottommargin">
 						<div class="feature-box media-box">
