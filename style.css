@@ -26,7 +26,7 @@ dl, dt, dd, ol, ul, li {
 }
 
 ::selection {
-	background: #1ABC9C;
+	background: #F18052;
 	color: #FFF;
 	text-shadow: none;
 }
@@ -1344,7 +1344,7 @@ body.stretched #header.full-header #primary-menu ul li.mega-menu .mega-menu-cont
 }
 
 #primary-menu > div > ul > li:hover a,
-#primary-menu > div > ul > li.current a { color: #1ABC9C; }
+#primary-menu > div > ul > li.current a { color: #F18052; }
 
 body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.center > ul,
 body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.center > div {
@@ -6662,7 +6662,7 @@ body:not(.device-xs):not(.device-xxs) .countdown.countdown-large.coming-soon .co
 	font-size: 14px;
 	height: 40px;
 	line-height: 40px;
-	background-color: #1ABC9C;
+	background-color: #F18052;
 	color: #FFF;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -10111,7 +10111,7 @@ body:not(.device-touch) .rounded-skill {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background-color: #1ABC9C;
+	background-color: #F18052;
 	overflow: visible !important;
 	border-radius: 2px;
 	-webkit-transition: width 1.2s ease-in-out;
@@ -11020,7 +11020,7 @@ label.error { display: none !important; }
 	display: block;
 	background: transparent;
 	padding: 0 0 10px;
-	border-bottom: 2px solid #1ABC9C;
+	border-bottom: 2px solid #F18052;
 }
 
 
