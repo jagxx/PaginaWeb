@@ -11346,7 +11346,8 @@ body:not(.device-touch) #gotoTop {
 	-o-transition: background-color .2s linear;
 }
 
-.stretched #gotoTop { bottom: 30px; }
+.stretched #gotoTop { bottom: 30px;
+					  left: 20px; }
 
 #gotoTop:hover { background-color: #1ABC9C; }
 
