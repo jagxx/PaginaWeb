@@ -26,46 +26,7 @@
 
             </script>
 <meta charset="utf-8">
-<style>    
-    /* The Modal (background) */
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      padding-top: 100px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-    
-    /* Modal Content */
-    .modal-content {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-    }
-    
-    /* The Close Button */
-    .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    </style>
+
 <!--[if IE ]>
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <![endif]-->
@@ -102,7 +63,47 @@
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 
-	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+    <style>    
+        /* The Modal (background) */
+        .modal_2 {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content_1 {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+        }
+        
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        </style>
 <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
@@ -164,10 +165,12 @@
 <p class="subtitle">Calcula el coste para crear tu página web de manera sencilla. Obtén un presupuesto aproximado para la creación de tu sitio web.
     <strong>Si no entiendes alguna de las preguntas puedes pulsar el ícono de ayuda.</strong>
     (<img src="img/help.png" data-toggle id="myBtn" onclick="document.getElementById('modal1').style.display='block'">)
-    <div class="modal-content" style="display: none;" id="modal1">
+    <div class="modal_2" id="modal1">
+    <div class="modal-content_1" style="background: blanchedalmond;">
         <span class="close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
-        <p>¡Te aparecerá un cuadro de ayuda como este!</p>
+        <p id="change_text">¡Te aparecerá un cuadro de ayuda como este!</p>
       </div>       
+    </div>
 
 </p>
 <button class="button text-uppercase js--start" style="background-image:linear-gradient(to left, #F18052, #F18052)">Calcular costo</button>
@@ -177,7 +180,13 @@
     <span class="text-bold question-progress">1/10</span>
     <span class="text-bold price-progress js--price-progress">-</span>
     </div>
-<h2 class="question-title">¿Qué tipo de web estás buscando?</h2>
+<h2 class="question-title">¿Qué tipo de web estás buscando? <img src="img/help.png" data-toggle onclick="document.getElementById('modal2').style.display='block'"></h2>
+<div class="modal_2" id="modal2">
+        <div class="modal-content_1" style="background: blanchedalmond;">
+            <span class="close" onclick="document.getElementById('modal2').style.display='none'">&times;</span>
+            <p id="change_text">Escoge el tipo de web que buscas, si no se encuentra selecciona "a medida"</p>
+          </div>       
+        </div>
 <div class="answer-group row-of-4"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="6000">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-1-1.png" alt="E-commerce/Tienda online">
@@ -206,8 +215,14 @@
         <span class="text-bold price-progress js--price-progress">-</span>
 <span class="link question-previous js--previous">← Anterior</span>
         </div>
-<h2 class="question-title">¿Qué diseño quieres que tenga tu Web?</h2>
-<div class="answer-group row-of-4"><div class="col">
+<h2 class="question-title">¿Qué diseño quieres que tenga tu Web? <img src="img/help.png" data-toggle onclick="document.getElementById('modal3').style.display='block'"></h2>
+
+<div class="modal_2" id="modal3">
+        <div class="modal-content_1" style="background: blanchedalmond;">
+            <span class="close" onclick="document.getElementById('modal3').style.display='none'">&times;</span>
+            <p id="change_text">Con diseño nos referimos a si ya sabes dónde poner cada elemento de tu web</p>
+          </div>       
+        </div><div class="answer-group row-of-4"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-2-1.png" alt="Usar una plantilla">
 <span class="answer-text">Usar una plantilla</span>
@@ -235,7 +250,13 @@
         <span class="text-bold price-progress js--price-progress">-</span>
 <span class="link question-previous js--previous">← Anterior</span>
         </div>
-<h2 class="question-title">¿Cómo de grande necesitas que sea la web?</h2>
+<h2 class="question-title">¿Cómo de grande necesitas que sea la web?<img src="img/help.png" data-toggle onclick="document.getElementById('modal4').style.display='block'"> </h2>
+<div class="modal_2" id="modal4">
+        <div class="modal-content_1" style="background: blanchedalmond;">
+            <span class="close" onclick="document.getElementById('modal4').style.display='none'">&times;</span>
+            <p id="change_text">Número de páginas o pestañas por las que estará conformada tu web</p>
+          </div>       
+        </div>
 <div class="answer-group row-of-4"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="1">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-3-1.png" alt="Pequeña: menos de 3 páginas/50 productos">
@@ -264,7 +285,13 @@
         <span class="text-bold price-progress js--price-progress">-</span>
 <span class="link question-previous js--previous">← Anterior</span>
         </div>
-<h2 class="question-title">¿En tu web se van a realizar pagos?</h2>
+<h2 class="question-title">¿En tu web se van a realizar pagos?<img src="img/help.png" data-toggle onclick="document.getElementById('modal5').style.display='block'"> </h2>
+<div class="modal_2" id="modal5">
+        <div class="modal-content_1" style="background: blanchedalmond;">
+            <span class="close" onclick="document.getElementById('modal5').style.display='none'">&times;</span>
+            <p id="change_text">Por ejemplo si necesitas compras en pagos en línea para una tienda, etc.</p>
+          </div>       
+        </div>
 <div class="answer-group row-of-3"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-4-1.png" alt="Sí">
@@ -288,7 +315,13 @@
         <span class="text-bold price-progress js--price-progress">-</span>
 <span class="link question-previous js--previous">← Anterior</span>
         </div>
-<h2 class="question-title">¿La Web estará integrada con otra Web, App o ERP?</h2>
+<h2 class="question-title">¿La Web estará integrada con otra Web, App o ERP?<img src="img/help.png" data-toggle onclick="document.getElementById('modal6').style.display='block'"> </h2>
+<div class="modal_2" id="modal6">
+        <div class="modal-content_1" style="background: blanchedalmond;">
+            <span class="close" onclick="document.getElementById('modal6').style.display='none'">&times;</span>
+            <p id="change_text">Por ejemplo si se necesita integrar con un sistema que gestione tu empresa o solicitas conexión con API's de otras plataformas</p>
+          </div>       
+        </div>
 <div class="answer-group row-of-3"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="1.5">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-5-1.png" alt="Sí">
@@ -312,7 +345,13 @@
         <span class="text-bold price-progress js--price-progress">-</span>
 <span class="link question-previous js--previous">← Anterior</span>
         </div>
-<h2 class="question-title">¿Tu Web necesita login o registro de usuarios?</h2>
+<h2 class="question-title">¿Tu Web necesita login o registro de usuarios?<img src="img/help.png" data-toggle onclick="document.getElementById('modal7').style.display='block'"> </h2>
+<div class="modal_2" id="modal7">
+        <div class="modal-content_1" style="background: blanchedalmond;">
+            <span class="close" onclick="document.getElementById('modal7').style.display='none'">&times;</span>
+            <p id="change_text">Sólo si requieres ver movimientos, permisos, etc.</p>
+          </div>       
+        </div>
 <div class="answer-group row-of-3"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="1.15">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-6-1.png" alt="Sí">
@@ -360,7 +399,7 @@
         <span class="text-bold price-progress js--price-progress">-</span>
 <span class="link question-previous js--previous">← Anterior</span>
         </div>
-<h2 class="question-title">¿La Web necesita un directorio/buscador interno?</h2>
+<h2 class="question-title">¿La Web necesita un directorio/buscador interno?<img src="img/help.png" data-toggle onclick="document.getElementById('modal2').style.display='block'"> </h2>
 <div class="answer-group row-of-3"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-8-1.png" alt="Sí">
@@ -408,7 +447,7 @@
         <span class="text-bold price-progress js--price-progress">-</span>
 <span class="link question-previous js--previous">← Anterior</span>
         </div>
-<h2 class="question-title">¿En qué estado se encuentra tu web?</h2>
+<h2 class="question-title">¿En qué estado se encuentra tu web?<img src="img/help.png" data-toggle onclick="document.getElementById('modal2').style.display='block'"> </h2>
 <div class="answer-group row-of-4"><div class="col">
 <div class="answer js--answer" data-answer-id="1" data-answer-weight="1">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-10-1.png" alt="Solamente es una idea">
@@ -430,7 +469,7 @@
 <span class="answer-text">Web lanzada</span>
 </div>
 </div></div>
-</section>
+</section> 
 <section class="section results" style="display: none; background-color: #FFFFFF">
 <p class="intro">¡Bien! ¡Hemos terminado!</p>
 <h2>El costo estimado de tu web es<br>
@@ -446,8 +485,8 @@
 <div class="result-body">
 <span class="result-question">¿Qué tipo de web estás buscando?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta1"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -456,8 +495,8 @@
 <div class="result-body">
 <span class="result-question">¿Qué diseño quieres que tenga tu Web?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta2"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -466,8 +505,8 @@
 <div class="result-body">
 <span class="result-question">¿Cómo de grande necesitas que sea la web?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta3"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -476,8 +515,8 @@
 <div class="result-body">
 <span class="result-question">¿En tu web se van a realizar pagos?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta4"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -486,8 +525,8 @@
 <div class="result-body">
 <span class="result-question">¿La Web estará integrada con otra Web, App o ERP?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta5"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -496,8 +535,8 @@
 <div class="result-body">
 <span class="result-question">¿Tu Web necesita login o registro de usuarios?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta6"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -506,8 +545,8 @@
 <div class="result-body">
 <span class="result-question">¿Va a ser una web multidioma?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta7"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -515,9 +554,9 @@
 <img class="result-image js--result-image" src="img/web/answer-1-1.png" alt>
 <div class="result-body">
 <span class="result-question">¿La Web necesita un directorio/buscador interno?</span>
-<span
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<span>
+<b class="result-answer js--result-answer" id="respuesta8"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -526,8 +565,8 @@
 <div class="result-body">
 <span class="result-question">¿Tu web necesita servicios de SEO?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta9"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
@@ -536,23 +575,89 @@
 <div class="result-body">
 <span class="result-question">¿En qué estado se encuentra tu web?</span>
 <span>
-<b class="result-answer js--result-answer"></b>
-<span class="result-change js--change">Cambiar</span>
+<b class="result-answer js--result-answer" id="respuesta10"></b>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
 </span>
 </div>
 </li>
 </ul>
 </div>
-<p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <a href="contacto.html">Contáctanos</a>
+<p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform').style.display='block'; myFunction()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
 <span class="link results-restart js--restart">← Volver a empezar</span>
+    <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post" style="display: none">
+
+        <div class="form-process"></div>
+
+        <div class="col_one_third">
+            <label for="template-contactform-name">Nombre <small>*</small></label>
+            <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+        </div>
+
+        <div class="col_one_third">
+            <label for="template-contactform-email">Correo <small>*</small></label>
+            <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+        </div>
+
+        <div class="col_one_third col_last">
+            <label for="template-contactform-phone">Número telefónico </label>
+            <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+        </div>
+
+        <div class="col_full hidden">
+                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+            </div>
+
+        <div class="col_full">
+            <a id="answer1"></a>
+            <a id="answer2"></a>
+            <a id="answer3"></a>
+            <a id="answer4"></a>
+            <a id="answer5"></a>
+            <a id="answer6"></a>
+            <a id="answer7"></a>
+            <a id="answer8"></a>
+            <a id="answer9"></a>
+            <a id="answer10"></a>
+            <script>
+                function myFunction() {
+                answ1 = document.getElementById("respuesta1").innerHTML;
+                answ2 = document.getElementById("respuesta2").innerHTML;
+                answ3 = document.getElementById("respuesta3").innerHTML;
+                answ4 = document.getElementById("respuesta4").innerHTML;
+                answ5 = document.getElementById("respuesta5").innerHTML;
+                answ6 = document.getElementById("respuesta6").innerHTML;
+                answ7 = document.getElementById("respuesta7").innerHTML;
+                answ8 = document.getElementById("respuesta8").innerHTML;
+                answ9 = document.getElementById("respuesta9").innerHTML;
+                answ10 = document.getElementById("respuesta10").innerHTML;
+                document.getElementById("answer1").innerHTML = answ1;
+                document.getElementById("answer2").innerHTML = answ2;
+                document.getElementById("answer3").innerHTML = answ3;
+                document.getElementById("answer4").innerHTML = "¿pagos? " + answ4;
+                document.getElementById("answer5").innerHTML = "¿integrado? " + answ5;
+                document.getElementById("answer6").innerHTML = "¿login? " + answ6;
+                document.getElementById("answer7").innerHTML = "¿multidioma? " + answ7;
+                document.getElementById("answer8").innerHTML = "¿directorio? " + answ8;
+                document.getElementById("answer9").innerHTML = "¿SEO? " + answ9;
+                document.getElementById("answer10").innerHTML = answ10;
+            }
+            </script>
+        </div>
+
+        <div class="col_full">
+            <label for="template-contactform-message">Describe un poco más a detalle tu proyecto:</label>
+            <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+        </div>
+
+        <div class="col_full">
+            <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit" style="background-image:linear-gradient(to left, #F18052, #F18052)">Mandar mensaje</button>
+        </div>
+
+    </form>
 </section>
 </main>
 <div id="config" data-type="web" data-lang="es" data-pph="30" data-multi="true" data-curr-symbol="$" data-curr-symbol-before="true" data-curr-thousands="." data-curr-decimal="," data-curr-exchange="1"></div>
 <script src="js/home.js"></script>
-
-<script type="text/javascript">
-            _linkedin_data_partner_id = "338546";
-        </script>
 <script type="text/javascript">
             (function(){var s = document.getElementsByTagName("script")[0];
             var b = document.createElement("script");
