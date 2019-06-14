@@ -54,7 +54,6 @@
 <link rel="manifest" href="manifest.json">
 <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 <link rel="stylesheet" href="css/home.css">
-<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="fonts/font_calculators.css" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
@@ -70,7 +69,7 @@
           display: none; /* Hidden by default */
           position: fixed; /* Stay in place */
           z-index: 1; /* Sit on top */
-          padding-top: 100px; /* Location of the box */
+          padding-top: 20%; /* Location of the box */
           left: 0;
           top: 0;
           width: 100%; /* Full width */
@@ -78,6 +77,13 @@
           overflow: auto; /* Enable scroll if needed */
           background-color: rgb(0,0,0); /* Fallback color */
           background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+          text-transform: uppercase;
+          box-shadow: 0 1px 5px 0 rgba(0,0,0,.2);
+          box-sizing: border-box;
+          font-family: 'Gotham Rounded';
+          font-weight: 700;
+          color: white;
         }
         
         /* Modal Content */
@@ -87,6 +93,7 @@
           padding: 20px;
           border: 1px solid #888;
           width: 80%;
+          border-radius: 15px;
         }
         
         /* The Close Button */
@@ -118,8 +125,8 @@
                 
                 <!-- Primary Navigation
                 ============================================= -->
-                <nav id="primary-menu" class="style-2 center" style="float: none; max-width: none; border-top: 1px solid #FFFFFF;">
-                        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+                <nav id="primary-menu" class="style-2 center">
+                        <div id="primary-menu-trigger"><i class="icon-reorder"style="padding-left: 20px;" onclick="showList()"></i></div>
                     <div class="container clearfix">
                             <div id="logo">
                                     <a class="standard-logo" data-sticky-logo="demos/media-agency/images/logo-media@2x.png" 
@@ -141,6 +148,9 @@
                             jQuery(document).ready(function($){
                                 $( '#primary-menu ul li:has(ul) > a > div' ).append( ' <i class="icon-angle-down norightmargin"></i>' );
                             });
+                            function showList(){
+                                $( '#primary-menu ul li:has(ul) > a > div' ).append( ' <i class="icon-angle-down norightmargin"></i>');
+                            }
                         </script>
 
                         <!-- Top Search
@@ -166,7 +176,7 @@
     <strong>Si no entiendes alguna de las preguntas puedes pulsar el ícono de ayuda.</strong>
     (<img src="img/help.png" data-toggle id="myBtn" onclick="document.getElementById('modal1').style.display='block'">)
     <div class="modal_2" id="modal1">
-    <div class="modal-content_1" style="background: blanchedalmond;">
+    <div class="modal-content_1" style="background: #F18052;">
         <span class="close" onclick="document.getElementById('modal1').style.display='none'">&times;</span>
         <p id="change_text">¡Te aparecerá un cuadro de ayuda como este!</p>
       </div>       
@@ -178,32 +188,33 @@
 <section class="section question" data-question-id="1" data-pph="false" style="display: none; background-color: #FFFFFF">
     <div style="margin-bottom: 15%">
     <span class="text-bold question-progress">1/10</span>
-    <span class="text-bold price-progress js--price-progress">-</span>
+    <span class="text-bold price-progress js--price-progress" id="test">-</span>
     </div>
 <h2 class="question-title">¿Qué tipo de web estás buscando? <img src="img/help.png" data-toggle onclick="document.getElementById('modal2').style.display='block'"></h2>
 <div class="modal_2" id="modal2">
-        <div class="modal-content_1" style="background: blanchedalmond;">
+        <div class="modal-content_1" style="background: #F18052;">
             <span class="close" onclick="document.getElementById('modal2').style.display='none'">&times;</span>
             <p id="change_text">Escoge el tipo de web que buscas, si no se encuentra selecciona "a medida"</p>
           </div>       
         </div>
+        <div id="cargando" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div>
 <div class="answer-group row-of-4"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="6000">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="6000" id="oc1" onclick="document.getElementById('cargando').style.display='block'; document.getElementById('oc1').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-1-1.png" alt="E-commerce/Tienda online">
 <span class="answer-text">E-commerce/Tienda online</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="6000">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="6000" id="oc2" onclick="document.getElementById('cargando').style.display='block'; document.getElementById('oc2').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-1-2.png" alt="Web con blog">
 <span class="answer-text">Web con blog</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="6000">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="6000" id="oc3" onclick="document.getElementById('cargando').style.display='block'; document.getElementById('oc3').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-1-3.png" alt="Web para empresa/corporativa">
 <span class="answer-text">Web para empresa/corporativa</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="4" data-answer-weight="10000">
+<div class="answer js--answer" data-answer-id="4" data-answer-weight="10000" id="oc4" onclick="document.getElementById('cargando').style.display='block'; document.getElementById('oc4').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-1-4.png" alt="Web a medida">
 <span class="answer-text">Web a medida</span>
 </div>
@@ -212,33 +223,35 @@
 <section class="section question" data-question-id="2" data-pph="false" style="display: none; background-color: #FFFFFF">
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">2/10</span>
-        <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+        <span class="text-bold price-progress js--price-progress" id="pricetext">-</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction()">← Anterior</span>
         </div>
 <h2 class="question-title">¿Qué diseño quieres que tenga tu Web? <img src="img/help.png" data-toggle onclick="document.getElementById('modal3').style.display='block'"></h2>
 
 <div class="modal_2" id="modal3">
-        <div class="modal-content_1" style="background: blanchedalmond;">
+        <div class="modal-content_1" style="background: #F18052;">
             <span class="close" onclick="document.getElementById('modal3').style.display='none'">&times;</span>
             <p id="change_text">Con diseño nos referimos a si ya sabes dónde poner cada elemento de tu web</p>
           </div>       
-        </div><div class="answer-group row-of-4"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1">
+        </div>
+        <div id="cargando2" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div>
+        <div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1" id="oc5" onclick="document.getElementById('cargando2').style.display='block'; document.getElementById('oc5').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-2-1.png" alt="Usar una plantilla">
 <span class="answer-text">Usar una plantilla</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1.5">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1.5" id="oc6" onclick="document.getElementById('cargando2').style.display='block'; document.getElementById('oc6').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-2-2.png" alt="Diseño a medida">
 <span class="answer-text">Diseño a medida</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1" id="oc7" onclick="document.getElementById('cargando2').style.display='block'; document.getElementById('oc7').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-2-3.png" alt="No necesito el diseño">
 <span class="answer-text">No necesito el diseño</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="4" data-answer-weight="1.25">
+<div class="answer js--answer" data-answer-id="4" data-answer-weight="1.25" id="oc8" onclick="document.getElementById('cargando2').style.display='block'; document.getElementById('oc8').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-2-4.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -248,32 +261,33 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">3/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction3()">← Anterior</span>
         </div>
 <h2 class="question-title">¿Cómo de grande necesitas que sea la web?<img src="img/help.png" data-toggle onclick="document.getElementById('modal4').style.display='block'"> </h2>
 <div class="modal_2" id="modal4">
-        <div class="modal-content_1" style="background: blanchedalmond;">
+        <div class="modal-content_1" style="background: #F18052;">
             <span class="close" onclick="document.getElementById('modal4').style.display='none'">&times;</span>
             <p id="change_text">Número de páginas o pestañas por las que estará conformada tu web</p>
           </div>       
         </div>
+<div id="cargando3" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div>
 <div class="answer-group row-of-4"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1" id="oc9" onclick="document.getElementById('cargando3').style.display='block'; document.getElementById('oc9').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-3-1.png" alt="Pequeña: menos de 3 páginas/50 productos">
 <span class="answer-text">Pequeña: menos de 3 páginas/50 productos</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1.5">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1.5" id="oc10" onclick="document.getElementById('cargando3').style.display='block'; document.getElementById('oc10').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-3-2.png" alt="Mediana: menos de 10 páginas/200 productos">
 <span class="answer-text">Mediana: menos de 10 páginas/200 productos</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="2">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="2" id="oc11" onclick="document.getElementById('cargando3').style.display='block'; document.getElementById('oc11').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-3-3.png" alt="Grande: más de 10 páginas/200 productos">
 <span class="answer-text">Grande: más de 10 páginas/200 productos</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="4" data-answer-weight="2">
+<div class="answer js--answer" data-answer-id="4" data-answer-weight="2" id="oc12" onclick="document.getElementById('cargando3').style.display='block'; document.getElementById('oc12').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-3-4.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -283,27 +297,27 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">4/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction4()">← Anterior</span>
         </div>
 <h2 class="question-title">¿En tu web se van a realizar pagos?<img src="img/help.png" data-toggle onclick="document.getElementById('modal5').style.display='block'"> </h2>
 <div class="modal_2" id="modal5">
-        <div class="modal-content_1" style="background: blanchedalmond;">
+        <div class="modal-content_1" style="background: #F18052;">
             <span class="close" onclick="document.getElementById('modal5').style.display='none'">&times;</span>
-            <p id="change_text">Por ejemplo si necesitas compras en pagos en línea para una tienda, etc.</p>
+            <p id="change_text">Por ejemplo si necesitas pagos en línea para una tienda, etc.</p>
           </div>       
         </div>
-<div class="answer-group row-of-3"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1">
+<div id="cargando4" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1" id="oc13" onclick="document.getElementById('cargando4').style.display='block'; document.getElementById('oc13').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-4-1.png" alt="Sí">
 <span class="answer-text">Sí</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc14" onclick="document.getElementById('cargando4').style.display='block'; document.getElementById('oc14').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-4-2.png" alt="No">
 <span class="answer-text">No</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.05">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.05" id="oc15" onclick="document.getElementById('cargando4').style.display='block'; document.getElementById('oc15').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-4-3.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -313,27 +327,27 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">5/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction5()">← Anterior</span>
         </div>
 <h2 class="question-title">¿La Web estará integrada con otra Web, App o ERP?<img src="img/help.png" data-toggle onclick="document.getElementById('modal6').style.display='block'"> </h2>
 <div class="modal_2" id="modal6">
-        <div class="modal-content_1" style="background: blanchedalmond;">
+        <div class="modal-content_1" style="background: #F18052;">
             <span class="close" onclick="document.getElementById('modal6').style.display='none'">&times;</span>
             <p id="change_text">Por ejemplo si se necesita integrar con un sistema que gestione tu empresa o solicitas conexión con API's de otras plataformas</p>
           </div>       
         </div>
-<div class="answer-group row-of-3"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.5">
+<div id="cargando5" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.5" id="oc16" onclick="document.getElementById('cargando5').style.display='block'; document.getElementById('oc16').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-5-1.png" alt="Sí">
 <span class="answer-text">Sí</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc17" onclick="document.getElementById('cargando5').style.display='block'; document.getElementById('oc17').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-5-2.png" alt="No">
 <span class="answer-text">No</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.25">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.25" id="oc18" onclick="document.getElementById('cargando5').style.display='block'; document.getElementById('oc18').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-5-3.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -343,27 +357,27 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">6/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction6()">← Anterior</span>
         </div>
 <h2 class="question-title">¿Tu Web necesita login o registro de usuarios?<img src="img/help.png" data-toggle onclick="document.getElementById('modal7').style.display='block'"> </h2>
 <div class="modal_2" id="modal7">
-        <div class="modal-content_1" style="background: blanchedalmond;">
+        <div class="modal-content_1" style="background: #F18052;">
             <span class="close" onclick="document.getElementById('modal7').style.display='none'">&times;</span>
             <p id="change_text">Sólo si requieres ver movimientos, permisos, etc.</p>
           </div>       
         </div>
-<div class="answer-group row-of-3"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.15">
+<div id="cargando6" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.15" id="oc19" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc19').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-6-1.png" alt="Sí">
 <span class="answer-text">Sí</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1"  id="oc20" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc20').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-6-2.png" alt="No">
 <span class="answer-text">No</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.08">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.08"  id="oc21" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc21').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-6-3.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -373,21 +387,26 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">7/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction7()">← Anterior</span>
         </div>
-<h2 class="question-title">¿Va a ser una web multidioma?</h2>
-<div class="answer-group row-of-3"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.15">
+<h2 class="question-title">¿Va a ser una web multidioma?<img src="img/help.png" data-toggle onclick="document.getElementById('modal8').style.display='block'"></h2>
+<div class="modal_2" id="modal7">
+    <div class="modal-content_1" style="background: #F18052;">
+        <span class="close" onclick="document.getElementById('modal8').style.display='none'">&times;</span>
+        <p id="change_text">Si solicitas que sea en 2 o más idiomas</p>
+      </div>       
+    </div><div id="cargando7" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.15" id="oc22" onclick="document.getElementById('cargando7').style.display='block'; document.getElementById('oc22').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-7-1.png" alt="Sí">
 <span class="answer-text">Sí</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc23" onclick="document.getElementById('cargando7').style.display='block'; document.getElementById('oc23').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-7-2.png" alt="No">
 <span class="answer-text">No</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.08">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.08" id="oc24" onclick="document.getElementById('cargando7').style.display='block'; document.getElementById('oc24').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-7-3.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -397,21 +416,27 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">8/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction8()">← Anterior</span>
         </div>
-<h2 class="question-title">¿La Web necesita un directorio/buscador interno?<img src="img/help.png" data-toggle onclick="document.getElementById('modal2').style.display='block'"> </h2>
-<div class="answer-group row-of-3"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1">
+<h2 class="question-title">¿La Web necesita un directorio/buscador interno?<img src="img/help.png" data-toggle onclick="document.getElementById('modal9').style.display='block'"> </h2>
+<div class="modal_2" id="modal7">
+    <div class="modal-content_1" style="background: #F18052;">
+        <span class="close" onclick="document.getElementById('modal9').style.display='none'">&times;</span>
+        <p id="change_text">Es un buscador general, de productos, pestañas, etc.</p>
+      </div>       
+    </div>
+<div id="cargando8" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1" id="oc25" onclick="document.getElementById('cargando8').style.display='block'; document.getElementById('oc25').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-8-1.png" alt="Sí">
 <span class="answer-text">Sí</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc26" onclick="document.getElementById('cargando8').style.display='block'; document.getElementById('oc26').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-8-2.png" alt="No">
 <span class="answer-text">No</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.25">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.25" id="oc27" onclick="document.getElementById('cargando8').style.display='block'; document.getElementById('oc27').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-8-3.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -421,21 +446,27 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">9/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction9()">← Anterior</span>
         </div>
-<h2 class="question-title">¿Tu web necesita servicios de SEO?</h2>
-<div class="answer-group row-of-3"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.25">
+<h2 class="question-title">¿Tu web necesita servicios de SEO?<img src="img/help.png" data-toggle onclick="document.getElementById('modal10').style.display='block'"></h2>
+<div class="modal_2" id="modal7">
+    <div class="modal-content_1" style="background: #F18052;">
+        <span class="close" onclick="document.getElementById('modal10').style.display='none'">&times;</span>
+        <p id="change_text">Esto se refiere a un buscador más avanzado que por ejemplo busca una palabra en absolutamente toda la página.</p>
+      </div>       
+    </div>
+<div id="cargando9" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.25" id="oc28" onclick="document.getElementById('cargando9').style.display='block'; document.getElementById('oc28').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-9-1.png" alt="Sí">
 <span class="answer-text">Sí</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc29" onclick="document.getElementById('cargando9').style.display='block'; document.getElementById('oc29').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-9-2.png" alt="No">
 <span class="answer-text">No</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.1">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.1" id="oc30" onclick="document.getElementById('cargando9').style.display='block'; document.getElementById('oc30').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-9-3.png" alt="No lo sé">
 <span class="answer-text">No lo sé</span>
 </div>
@@ -445,26 +476,32 @@
     <div style="margin-bottom: 15%">
         <span class="text-bold question-progress">10/10</span>
         <span class="text-bold price-progress js--price-progress">-</span>
-<span class="link question-previous js--previous">← Anterior</span>
+<span class="link question-previous js--previous" onclick="hideShowFunction10()">← Anterior</span>
         </div>
-<h2 class="question-title">¿En qué estado se encuentra tu web?<img src="img/help.png" data-toggle onclick="document.getElementById('modal2').style.display='block'"> </h2>
-<div class="answer-group row-of-4"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1">
+<h2 class="question-title">¿En qué estado se encuentra tu web?<img src="img/help.png" data-toggle onclick="document.getElementById('modal11').style.display='block'"> </h2>
+<div class="modal_2" id="modal7">
+    <div class="modal-content_1" style="background: #F18052;">
+        <span class="close" onclick="document.getElementById('modal11').style.display='none'">&times;</span>
+        <p id="change_text">¿Qué es lo que tienes hasta el momento de tu web?</p>
+      </div>       
+    </div>
+<div id="cargando10" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-4"><div class="col">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1" id="oc31" onclick="document.getElementById('cargando10').style.display='block'; document.getElementById('oc27').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-10-1.png" alt="Solamente es una idea">
 <span class="answer-text">Solamente es una idea</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc32" onclick="document.getElementById('cargando10').style.display='block'; document.getElementById('oc31').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-10-2.png" alt="Boceto preparado">
 <span class="answer-text">Boceto preparado</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1" id="oc33" onclick="document.getElementById('cargando10').style.display='block'; document.getElementById('oc32').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-10-3.png" alt="Web en desarrollo">
 <span class="answer-text">Web en desarrollo</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="4" data-answer-weight="1">
+<div class="answer js--answer" data-answer-id="4" data-answer-weight="1" id="oc34" onclick="document.getElementById('cargando10').style.display='block'; document.getElementById('oc33').style.display='none'">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-10-4.png" alt="Web lanzada">
 <span class="answer-text">Web lanzada</span>
 </div>
@@ -486,7 +523,7 @@
 <span class="result-question">¿Qué tipo de web estás buscando?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta1"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -496,7 +533,7 @@
 <span class="result-question">¿Qué diseño quieres que tenga tu Web?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta2"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction3()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -506,7 +543,7 @@
 <span class="result-question">¿Cómo de grande necesitas que sea la web?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta3"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction4()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -516,7 +553,7 @@
 <span class="result-question">¿En tu web se van a realizar pagos?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta4"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction5()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -526,7 +563,7 @@
 <span class="result-question">¿La Web estará integrada con otra Web, App o ERP?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta5"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction6()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -536,7 +573,7 @@
 <span class="result-question">¿Tu Web necesita login o registro de usuarios?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta6"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction7()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -546,7 +583,7 @@
 <span class="result-question">¿Va a ser una web multidioma?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta7"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction8()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -556,7 +593,7 @@
 <span class="result-question">¿La Web necesita un directorio/buscador interno?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta8"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction9()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -566,7 +603,7 @@
 <span class="result-question">¿Tu web necesita servicios de SEO?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta9"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction10()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -576,14 +613,14 @@
 <span class="result-question">¿En qué estado se encuentra tu web?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta10"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none';">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform').style.display='none'; hideShowFunction11()">Cambiar</span>
 </span>
 </div>
 </li>
 </ul>
 </div>
 <p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform').style.display='block'; myFunction()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
-<span class="link results-restart js--restart">← Volver a empezar</span>
+<span class="link results-restart js--restart" onclick="hideShowFunction12()">← Volver a empezar</span>
     <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post" style="display: none">
 
         <div class="form-process"></div>
@@ -656,6 +693,119 @@
     </form>
 </section>
 </main>
+<script>
+    function hideShowFunction() {
+        document.getElementById('oc1').style.display='flex';
+        document.getElementById('oc2').style.display='flex';
+        document.getElementById('oc3').style.display='flex';
+        document.getElementById('oc4').style.display='flex';
+        document.getElementById('cargando').style.display='none';
+    }
+    function hideShowFunction3() {
+        document.getElementById('oc5').style.display='flex';
+        document.getElementById('oc6').style.display='flex';
+        document.getElementById('oc7').style.display='flex';
+        document.getElementById('oc8').style.display='flex';
+        document.getElementById('cargando2').style.display='none';
+    }
+    function hideShowFunction4() {
+        document.getElementById('oc9').style.display='flex';
+        document.getElementById('oc10').style.display='flex';
+        document.getElementById('oc11').style.display='flex';
+        document.getElementById('oc12').style.display='flex';
+        document.getElementById('cargando3').style.display='none';
+    }
+    function hideShowFunction5() {
+        document.getElementById('oc13').style.display='flex';
+        document.getElementById('oc14').style.display='flex';
+        document.getElementById('oc15').style.display='flex';
+        document.getElementById('cargando4').style.display='none';
+    }
+    function hideShowFunction6() {
+        document.getElementById('oc16').style.display='flex';
+        document.getElementById('oc17').style.display='flex';
+        document.getElementById('oc18').style.display='flex';
+        document.getElementById('cargando5').style.display='none';
+    }
+    function hideShowFunction7() {
+        document.getElementById('oc19').style.display='flex';
+        document.getElementById('oc20').style.display='flex';
+        document.getElementById('oc21').style.display='flex';
+        document.getElementById('cargando6').style.display='none';
+    }
+    function hideShowFunction8() {
+        document.getElementById('oc22').style.display='flex';
+        document.getElementById('oc23').style.display='flex';
+        document.getElementById('oc24').style.display='flex';
+        document.getElementById('cargando7').style.display='none';
+    }
+    function hideShowFunction9() {
+        document.getElementById('oc25').style.display='flex';
+        document.getElementById('oc26').style.display='flex';
+        document.getElementById('oc27').style.display='flex';
+        document.getElementById('cargando8').style.display='none';
+    }
+    function hideShowFunction10() {
+        document.getElementById('oc28').style.display='flex';
+        document.getElementById('oc29').style.display='flex';
+        document.getElementById('oc30').style.display='flex';
+        document.getElementById('cargando9').style.display='none';
+    }
+    function hideShowFunction11() {
+        document.getElementById('oc31').style.display='flex';
+        document.getElementById('oc32').style.display='flex';
+        document.getElementById('oc33').style.display='flex';
+        document.getElementById('oc34').style.display='flex';
+        document.getElementById('cargando10').style.display='none';
+    }
+    function hideShowFunction12() {
+        document.getElementById('oc1').style.display='flex';
+        document.getElementById('oc2').style.display='flex';
+        document.getElementById('oc3').style.display='flex';
+        document.getElementById('oc4').style.display='flex';
+        document.getElementById('cargando').style.display='none';
+        document.getElementById('oc5').style.display='flex';
+        document.getElementById('oc6').style.display='flex';
+        document.getElementById('oc7').style.display='flex';
+        document.getElementById('oc8').style.display='flex';
+        document.getElementById('cargando2').style.display='none';
+        document.getElementById('oc9').style.display='flex';
+        document.getElementById('oc10').style.display='flex';
+        document.getElementById('oc11').style.display='flex';
+        document.getElementById('oc12').style.display='flex';
+        document.getElementById('cargando3').style.display='none';
+        document.getElementById('oc13').style.display='flex';
+        document.getElementById('oc14').style.display='flex';
+        document.getElementById('oc15').style.display='flex';
+        document.getElementById('cargando4').style.display='none';
+        document.getElementById('oc16').style.display='flex';
+        document.getElementById('oc17').style.display='flex';
+        document.getElementById('oc18').style.display='flex';
+        document.getElementById('cargando5').style.display='none';
+        document.getElementById('oc19').style.display='flex';
+        document.getElementById('oc20').style.display='flex';
+        document.getElementById('oc21').style.display='flex';
+        document.getElementById('cargando6').style.display='none';
+        document.getElementById('oc22').style.display='flex';
+        document.getElementById('oc23').style.display='flex';
+        document.getElementById('oc24').style.display='flex';
+        document.getElementById('cargando7').style.display='none';
+        document.getElementById('oc25').style.display='flex';
+        document.getElementById('oc26').style.display='flex';
+        document.getElementById('oc27').style.display='flex';
+        document.getElementById('cargando8').style.display='none';
+        document.getElementById('oc28').style.display='flex';
+        document.getElementById('oc29').style.display='flex';
+        document.getElementById('oc30').style.display='flex';
+        document.getElementById('cargando9').style.display='none';
+        document.getElementById('oc31').style.display='flex';
+        document.getElementById('oc32').style.display='flex';
+        document.getElementById('oc33').style.display='flex';
+        document.getElementById('oc34').style.display='flex';
+        document.getElementById('cargando10').style.display='none';
+    
+    }
+</script>
 <div id="config" data-type="web" data-lang="es" data-pph="30" data-multi="true" data-curr-symbol="$" data-curr-symbol-before="true" data-curr-thousands="." data-curr-decimal="," data-curr-exchange="1"></div>
 <script src="js/home.js"></script>
 <script type="text/javascript">
