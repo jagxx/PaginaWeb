@@ -223,7 +223,7 @@ class PHPMailer
      * Hosts will be tried in order.
      * @var string
      */
-    public $Host = 'mail.jaguarx.com.mx:26';
+    public $Host = 'mail.jaguarx.com.mx:25';
 
     /**
      * The default SMTP server port.
