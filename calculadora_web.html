@@ -806,6 +806,26 @@
     
     }
 </script>
+<script type="text/javascript">
+
+    $("#template-contactform").validate({
+        submitHandler: function(form) {
+            $('.form-process').fadeIn();
+            $(form).ajaxSubmit({
+                target: '#contact-form-result',
+                success: function() {
+                    $('.form-process').fadeOut();
+                    $(form).find('.sm-form-control').val('');
+                    $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                    SEMICOLON.widget.notifications($('#contact-form-result'));
+                }
+            });
+        }
+    });
+
+    $('#template-contactform-nophone').parent().hide();
+
+</script>
 <div id="config" data-type="web" data-lang="es" data-pph="30" data-multi="true" data-curr-symbol="$" data-curr-symbol-before="true" data-curr-thousands="." data-curr-decimal="," data-curr-exchange="1"></div>
 <script src="js/home.js"></script>
 <script type="text/javascript">
