@@ -70,13 +70,13 @@ class PHPMailer
      * The From email address for the message.
      * @var string
      */
-    public $From = 'root@localhost';
+    public $From = '';
 
     /**
      * The From name of the message.
      * @var string
      */
-    public $FromName = 'Root User';
+    public $FromName = '';
 
     /**
      * The Sender email (Return-Path) of the message.
@@ -223,14 +223,14 @@ class PHPMailer
      * Hosts will be tried in order.
      * @var string
      */
-    public $Host = 'localhost';
+    public $Host = 'mail.jaguarx.com.mx:26';
 
     /**
      * The default SMTP server port.
      * @var integer
      * @TODO Why is this needed when the SMTP class takes care of it?
      */
-    public $Port = 25;
+    public $Port = 26;
 
     /**
      * The SMTP HELO of the message.
