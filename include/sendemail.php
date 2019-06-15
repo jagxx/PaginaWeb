@@ -28,7 +28,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $botcheck = $_POST['template-contactform-botcheck'];
 
         $toemail = 'ventas@jaguarx.com.mx'; // Your Email Address
-        $toname = 'Contact'; // Your Name
+        $toname = 'Ventas'; // Your Name
 
         if( $botcheck == '' ) {
 
@@ -44,7 +44,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
             $referrer = $_SERVER['HTTP_REFERER'] ? '<br><br><br>This Form was submitted from: ' . $_SERVER['HTTP_REFERER'] : '';
 
-            $body = "$name $email $phone $message $r1 $r2 $r3 $r4 $r5 $r6 $r7 $r8 $r9 $r10";
+            $body = "$name $email $phone $message $r1 $r2 $r3 $r4 $r5 $r6 $r7 $r8 $r9 $r10 $referrer";
 
             $mail->MsgHTML( $body );
             $sendEmail = $mail->Send();

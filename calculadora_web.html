@@ -621,6 +621,8 @@
 </div>
 <p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform').style.display='block'; myFunction()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
 <span class="link results-restart js--restart" onclick="hideShowFunction12()">← Volver a empezar</span>
+<div class="content nobottommargin">
+    <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
     <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post" style="display: none">
 
         <div class="form-process"></div>
@@ -691,6 +693,28 @@
         </div>
 
     </form>
+
+<script type="text/javascript">
+
+    $("#template-contactform").validate({
+        submitHandler: function(form) {
+            $('.form-process').fadeIn();
+            $(form).ajaxSubmit({
+                target: '#contact-form-result',
+                success: function() {
+                    $('.form-process').fadeOut();
+                    $(form).find('.sm-form-control').val('');
+                    $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                    SEMICOLON.widget.notifications($('#contact-form-result'));
+                }
+            });
+        }
+    });
+
+    $('#template-contactform-nophone').parent().hide();
+
+</script>
+</div>
 </section>
 </main>
 <script>
@@ -805,26 +829,6 @@
         document.getElementById('cargando10').style.display='none';
     
     }
-</script>
-<script type="text/javascript">
-
-    $("#template-contactform").validate({
-        submitHandler: function(form) {
-            $('.form-process').fadeIn();
-            $(form).ajaxSubmit({
-                target: '#contact-form-result',
-                success: function() {
-                    $('.form-process').fadeOut();
-                    $(form).find('.sm-form-control').val('');
-                    $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
-                    SEMICOLON.widget.notifications($('#contact-form-result'));
-                }
-            });
-        }
-    });
-
-    $('#template-contactform-nophone').parent().hide();
-
 </script>
 <div id="config" data-type="web" data-lang="es" data-pph="30" data-multi="true" data-curr-symbol="$" data-curr-symbol-before="true" data-curr-thousands="." data-curr-decimal="," data-curr-exchange="1"></div>
 <script src="js/home.js"></script>
