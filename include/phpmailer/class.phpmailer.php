@@ -160,7 +160,7 @@ class PHPMailer
      * Options: "mail", "sendmail", or "smtp".
      * @var string
      */
-    public $Mailer = 'smtp';
+    public $Mailer = 'mail';
 
     /**
      * The path to the sendmail program.
@@ -223,14 +223,14 @@ class PHPMailer
      * Hosts will be tried in order.
      * @var string
      */
-    public $Host = 'mail.jaguarx.com.mx:25';
+    public $Host = 'mail.jaguarx.com.mx:26';
 
     /**
      * The default SMTP server port.
      * @var integer
      * @TODO Why is this needed when the SMTP class takes care of it?
      */
-    public $Port = 25;
+    public $Port = 26;
 
     /**
      * The SMTP HELO of the message.
@@ -309,7 +309,7 @@ class PHPMailer
      * Default of 5 minutes (300sec) is from RFC2821 section 4.5.3.2
      * @var integer
      */
-    public $Timeout = 600;
+    public $Timeout = 300;
 
     /**
      * SMTP class debug output mode.
