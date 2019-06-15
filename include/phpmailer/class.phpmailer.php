@@ -223,7 +223,7 @@ class PHPMailer
      * Hosts will be tried in order.
      * @var string
      */
-    public $Host = 'mail.jaguarx.com.mx:26';
+    public $Host = 'jaguarx.com.mx:26';
 
     /**
      * The default SMTP server port.
@@ -309,7 +309,7 @@ class PHPMailer
      * Default of 5 minutes (300sec) is from RFC2821 section 4.5.3.2
      * @var integer
      */
-    public $Timeout = 300;
+    public $Timeout = 600;
 
     /**
      * SMTP class debug output mode.
