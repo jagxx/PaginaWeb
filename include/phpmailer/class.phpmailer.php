@@ -160,7 +160,7 @@ class PHPMailer
      * Options: "mail", "sendmail", or "smtp".
      * @var string
      */
-    public $Mailer = 'mail';
+    public $Mailer = 'smtp';
 
     /**
      * The path to the sendmail program.
@@ -223,14 +223,14 @@ class PHPMailer
      * Hosts will be tried in order.
      * @var string
      */
-    public $Host = 'jaguarx.com.mx:26';
+    public $Host = 'mail.jaguarx.com.mx:465';
 
     /**
      * The default SMTP server port.
      * @var integer
      * @TODO Why is this needed when the SMTP class takes care of it?
      */
-    public $Port = 26;
+    public $Port = 25;
 
     /**
      * The SMTP HELO of the message.

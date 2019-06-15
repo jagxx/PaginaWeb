@@ -18,7 +18,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
         $botcheck = $_POST['template-contactform-botcheck'];
 
-        $toemail = 'contacto@jaguarx.com.mx'; // Your Email Address
+        $toemail = 'ventas@jaguarx.com.mx'; // Your Email Address
         $toname = 'Contact'; // Your Name
 
         if( $botcheck == '' ) {
