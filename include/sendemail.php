@@ -10,8 +10,9 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $name = $_POST['template-contactform-name'];
         $email = $_POST['template-contactform-email'];
         $phone = $_POST['template-contactform-phone'];
-        $subject = "Cotizacion" . $_POST['template-contactform-name';
+        $subject = $_POST['template-contactform-name'];
         $message = $_POST['template-contactform-message'];
+        $service = $_POST['answer1'];
         $r1 = $_POST['answer1'];
         $r2 = $_POST['answer2'];
         $r3 = $_POST['answer3'];
@@ -37,14 +38,25 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             $mail->AddAddress( $toemail , $toname );
             $mail->Subject = $subject;
 
-            $name = isset($name) ? "Name: $name<br><br>" : '';
+            $name = isset($name) ? "Nombre: $name<br><br>" : '';
             $email = isset($email) ? "Email: $email<br><br>" : '';
-            $phone = isset($phone) ? "Phone: $phone<br><br>" : '';
-            $message = isset($message) ? "Message: $message<br><br>" : '';
+            $phone = isset($phone) ? "Telefono: $phone<br><br>" : '';
+            $message = isset($message) ? "Mensaje: $message<br><br>" : '';
+            $service = isset($service) ? "Respuesta1: $service<br><br>" : '';
+            $r1 = isset($r1) ? "Tipo de web: $r1<br><br>" : '';
+            $r2 = isset($r2) ? "Diseño: $r2<br><br>" : '';
+            $r3 = isset($r3) ? "Tamaño: $r3<br><br>" : '';
+            $r4 = isset($r4) ? "Pagos: $r4<br><br>" : '';
+            $r5 = isset($r5) ? "Integraciones: $r5<br><br>" : '';
+            $r6 = isset($r6) ? "Login: $r6<br><br>" : '';
+            $r7 = isset($r7) ? "Multidioma: $r7<br><br>" : '';
+            $r8 = isset($r8) ? "Buscador: $r8<br><br>" : '';
+            $r9 = isset($r9) ? "SEO: $r9<br><br>" : '';
+            $r10 = isset($r10) ? "Status: $r10<br><br>" : '';
 
             $referrer = $_SERVER['HTTP_REFERER'] ? '<br><br><br>This Form was submitted from: ' . $_SERVER['HTTP_REFERER'] : '';
 
-            $body = "$name $email $phone $message $r1 $r2 $r3 $r4 $r5 $r6 $r7 $r8 $r9 $r10 $referrer";
+            $body = "$name $email $phone $message $service $r1 $r2 $r3 $r4 $r5 $r6 $r7 $r8 $r9 $r10 $referrer";
 
             $mail->MsgHTML( $body );
             $sendEmail = $mail->Send();
