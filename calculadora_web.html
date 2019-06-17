@@ -66,8 +66,9 @@
 
     <link rel="stylesheet" href="css/responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
     <style>    
         /* The Modal (background) */
         .modal_2 {
@@ -627,7 +628,7 @@
     <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
     <form class="nobottommargin" id="template-contactform2" name="template-contactform2" action="include/sendemail.php" method="post" style="display: none">
 
-        <div class="form-process"></div>
+        <div class="form-process2"></div>
 
         <div class="col_one_third">
             <label for="template-contactform-name">Nombre <small>*</small></label>
@@ -695,16 +696,16 @@
         </div>
 
     </form>
-
+</div>
 <script type="text/javascript">
 
     $("#template-contactform2").validate({
         submitHandler: function(form) {
-            $('.form-process').fadeIn();
+            $('.form-process2').fadeIn();
             $(form).ajaxSubmit({
                 target: '#contact-form-result',
                 success: function() {
-                    $('.form-process').fadeOut();
+                    $('.form-process2').fadeOut();
                     $(form).find('.sm-form-control').val('');
                     $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
                     SEMICOLON.widget.notifications($('#contact-form-result'));
@@ -716,7 +717,6 @@
     $('#template-contactform-nophone').parent().hide();
 
 </script>
-</div>
 </section>
 </main>
 <script>
