@@ -467,7 +467,7 @@
     <p class="intro">¡Bien! ¡Hemos terminado!</p>
     <h2>El costo estimado de tu App es<br>
     <span class="claim">
-    <span class="js--total-price">-</span>
+    <span class="js--total-price" id="respuesta10">-</span>
     </span>
     </h2>
     <div class="results-container">
@@ -568,9 +568,11 @@
     </li>
     </ul>
     </div>
-    <p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform-app').style.display='block'; myFunctionApp()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
+    <p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform2').style.display='block'; myFunction()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
     <span class="link results-restart js--restart" onclick="hideShowFunction10()">← Volver a empezar</span>
-    <form class="nobottommargin" id="template-contactform-app" name="template-contactform" action="include/sendemail.php" method="post" style="display: none">
+    <div class="content nobottommargin">
+    <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+    <form class="nobottommargin" id="template-contactform2" name="template-contactform2" action="include/sendemail.php" method="post" style="display: none" accept-charset="UTF-8">
 
         <div class="form-process"></div>
 
@@ -588,23 +590,12 @@
             <label for="template-contactform-phone">Número telefónico </label>
             <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
         </div>
-
+        
         <div class="col_full hidden">
                 <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
             </div>
-
-        <div class="col_full">
-            <a id="answer1"></a>
-            <a id="answer2"></a>
-            <a id="answer3"></a>
-            <a id="answer4"></a>
-            <a id="answer5"></a>
-            <a id="answer6"></a>
-            <a id="answer7"></a>
-            <a id="answer8"></a>
-            <a id="answer9"></a>
             <script>
-                function myFunctionApp() {
+                function myFunction() {
                 answ1 = document.getElementById("respuesta1").innerHTML;
                 answ2 = document.getElementById("respuesta2").innerHTML;
                 answ3 = document.getElementById("respuesta3").innerHTML;
@@ -614,29 +605,48 @@
                 answ7 = document.getElementById("respuesta7").innerHTML;
                 answ8 = document.getElementById("respuesta8").innerHTML;
                 answ9 = document.getElementById("respuesta9").innerHTML;
-                document.getElementById("answer1").innerHTML = answ1;
-                document.getElementById("answer2").innerHTML = answ2;
-                document.getElementById("answer3").innerHTML = answ3;
-                document.getElementById("answer4").innerHTML = "¿pagos? " + answ4;
-                document.getElementById("answer5").innerHTML = "¿integrado? " + answ5;
-                document.getElementById("answer6").innerHTML = "¿login? " + answ6;
-                document.getElementById("answer7").innerHTML = "¿multidioma? " + answ7;
-                document.getElementById("answer8").innerHTML = "¿directorio? " + answ8;
-                document.getElementById("answer9").innerHTML = "¿SEO? " + answ9;
+                answ10 = document.getElementById("respuesta10").innerHTML;
+                document.getElementById("template-contactform-message").innerHTML = "- Tipo de app: " + answ1 + "\n- Interactiva o estática: " + 
+                answ2 + "\n- Tamaño: " 
+                + answ3 + "\n- Login: " + answ4  + "\n- Multidioma: " + answ5 + "\n- Directorio o buscador: " + answ6 + "\n- Diseño: " + answ7 
+                + "\n- Status: " +  answ8 + "\n- Pagos: " + answ9 + "\n- Costo estimado: " + answ10;                
             }
             </script>
+        <div class="col_full">
+            <label for="template-contactform-message">Tus respuestas:</label>
+            <textarea class="sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="15"></textarea>
         </div>
-
         <div class="col_full">
             <label for="template-contactform-message">Describe un poco más a detalle tu proyecto:</label>
-            <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+            <textarea class="required sm-form-control" id="template-contactform-message2" name="template-contactform-message2" rows="6" cols="30"></textarea>
         </div>
 
         <div class="col_full">
-            <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit" style="background-image:linear-gradient(to left, #F18052, #F18052)">Mandar mensaje</button>
+            <button class="button button-3d nomargin" type="submit" id="template-contactform-submit2" name="template-contactform-submit2" value="submit" style="background-image:linear-gradient(to left, #F18052, #F18052)">Mandar mensaje</button>
         </div>
 
     </form>
+</div>
+<script type="text/javascript">
+
+    $("#template-contactform2").validate({
+        submitHandler: function(form) {
+            $('.form-process').fadeIn();
+            $(form).ajaxSubmit({
+                target: '#contact-form-result',
+                success: function() {
+                    $('.form-process').fadeOut();
+                    $(form).find('.sm-form-control').val('');
+                    $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                    SEMICOLON.widget.notifications($('#contact-form-result'));
+                }
+            });
+        }
+    });
+
+    $('#template-contactform-nophone').parent().hide();
+
+</script>
     </section>
     </main>
     <script>
@@ -737,6 +747,7 @@
             document.getElementById('cargando7').style.display='none';
             document.getElementById('cargando8').style.display='none';
             document.getElementById('cargando9').style.display='none';
+        window.location.reload();    
         }
     </script>
     <div id="config" data-type="web" data-lang="es" data-pph="30" data-multi="true" data-curr-symbol="$" data-curr-symbol-before="true" data-curr-thousands="." data-curr-decimal="," data-curr-exchange="1"></div>

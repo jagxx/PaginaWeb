@@ -372,7 +372,7 @@
 <p class="intro">¡Bien! ¡Hemos terminado!</p>
 <h2>El costo estimado de tu Programa es<br>
 <span class="claim">
-<span class="js--total-price">-</span>
+<span class="js--total-price" id="respuesta7">-</span>
 </span>
 </h2>
 <div class="results-container">
@@ -441,75 +441,81 @@
 
 </ul>
 </div>
-<p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform-app').style.display='block'; myFunctionProgram()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
+<p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform2').style.display='block'; myFunction()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
 <span class="link results-restart js--restart" onclick="hideShowFunction6()">← Volver a empezar</span>
-<form class="nobottommargin" id="template-contactform-program" name="template-contactform" action="include/sendemail.php" method="post" style="display: none">
+<div class="content nobottommargin">
+    <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+    <form class="nobottommargin" id="template-contactform2" name="template-contactform2" action="include/sendemail.php" method="post" style="display: none" accept-charset="UTF-8">
 
-    <div class="form-process"></div>
+        <div class="form-process"></div>
 
-    <div class="col_one_third">
-        <label for="template-contactform-name">Nombre <small>*</small></label>
-        <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
-    </div>
-
-    <div class="col_one_third">
-        <label for="template-contactform-email">Correo <small>*</small></label>
-        <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
-    </div>
-
-    <div class="col_one_third col_last">
-        <label for="template-contactform-phone">Número telefónico </label>
-        <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
-    </div>
-
-    <div class="col_full hidden">
-            <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+        <div class="col_one_third">
+            <label for="template-contactform-name">Nombre <small>*</small></label>
+            <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
         </div>
 
-    <div class="col_full">
-        <a id="answer1"></a>
-        <a id="answer2"></a>
-        <a id="answer3"></a>
-        <a id="answer4"></a>
-        <a id="answer5"></a>
-        <a id="answer6"></a>
-        <a id="answer7"></a>
-        <a id="answer8"></a>
-        <a id="answer9"></a>
-        <script>
-            function myFunctionProgram() {
-            answ1 = document.getElementById("respuesta1").innerHTML;
-            answ2 = document.getElementById("respuesta2").innerHTML;
-            answ3 = document.getElementById("respuesta3").innerHTML;
-            answ4 = document.getElementById("respuesta4").innerHTML;
-            answ5 = document.getElementById("respuesta5").innerHTML;
-            answ6 = document.getElementById("respuesta6").innerHTML;
-            answ7 = document.getElementById("respuesta7").innerHTML;
-            answ8 = document.getElementById("respuesta8").innerHTML;
-            answ9 = document.getElementById("respuesta9").innerHTML;
-            document.getElementById("answer1").innerHTML = answ1;
-            document.getElementById("answer2").innerHTML = answ2;
-            document.getElementById("answer3").innerHTML = answ3;
-            document.getElementById("answer4").innerHTML = "¿pagos? " + answ4;
-            document.getElementById("answer5").innerHTML = "¿integrado? " + answ5;
-            document.getElementById("answer6").innerHTML = "¿login? " + answ6;
-            document.getElementById("answer7").innerHTML = "¿multidioma? " + answ7;
-            document.getElementById("answer8").innerHTML = "¿directorio? " + answ8;
-            document.getElementById("answer9").innerHTML = "¿SEO? " + answ9;
+        <div class="col_one_third">
+            <label for="template-contactform-email">Correo <small>*</small></label>
+            <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+        </div>
+
+        <div class="col_one_third col_last">
+            <label for="template-contactform-phone">Número telefónico </label>
+            <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+        </div>
+        
+        <div class="col_full hidden">
+                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+            </div>
+            <script>
+                function myFunction() {
+                answ1 = document.getElementById("respuesta1").innerHTML;
+                answ2 = document.getElementById("respuesta2").innerHTML;
+                answ3 = document.getElementById("respuesta3").innerHTML;
+                answ4 = document.getElementById("respuesta4").innerHTML;
+                answ5 = document.getElementById("respuesta5").innerHTML;
+                answ6 = document.getElementById("respuesta6").innerHTML;
+                answ7 = document.getElementById("respuesta7").innerHTML;
+                document.getElementById("template-contactform-message").innerHTML = "- Tipo de programa: " + answ1 + "\n- Base de datos: " + 
+                answ2 + "\n- Volumen de datos: " + answ3 + "\n- Interfaz: " + answ4  + "\n- Panel admin: " + answ5 + "\n- Diseño: " 
+                + answ6 + "\n- Costo estimado: " + answ7;                
+            }
+            </script>
+        <div class="col_full">
+            <label for="template-contactform-message">Tus respuestas:</label>
+            <textarea class="sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="15"></textarea>
+        </div>
+        <div class="col_full">
+            <label for="template-contactform-message">Describe un poco más a detalle tu proyecto:</label>
+            <textarea class="required sm-form-control" id="template-contactform-message2" name="template-contactform-message2" rows="6" cols="30"></textarea>
+        </div>
+
+        <div class="col_full">
+            <button class="button button-3d nomargin" type="submit" id="template-contactform-submit2" name="template-contactform-submit2" value="submit" style="background-image:linear-gradient(to left, #F18052, #F18052)">Mandar mensaje</button>
+        </div>
+
+    </form>
+</div>
+<script type="text/javascript">
+
+    $("#template-contactform2").validate({
+        submitHandler: function(form) {
+            $('.form-process').fadeIn();
+            $(form).ajaxSubmit({
+                target: '#contact-form-result',
+                success: function() {
+                    $('.form-process').fadeOut();
+                    $(form).find('.sm-form-control').val('');
+                    $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                    SEMICOLON.widget.notifications($('#contact-form-result'));
+                }
+            });
         }
-        </script>
-    </div>
+    });
 
-    <div class="col_full">
-        <label for="template-contactform-message">Describe un poco más a detalle tu proyecto:</label>
-        <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
-    </div>
+    $('#template-contactform-nophone').parent().hide();
 
-    <div class="col_full">
-        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit" style="background-image:linear-gradient(to left, #F18052, #F18052)">Mandar mensaje</button>
-    </div>
-
-</form>
+</script>
 </section>
 </main>
 <script>
@@ -572,6 +578,7 @@
         document.getElementById('cargando4').style.display='none';
         document.getElementById('cargando5').style.display='none';
         document.getElementById('cargando6').style.display='none';
+        window.location.reload();    
     }
     function hideShowFunction7() {
         document.getElementById('oc18').style.display='flex';

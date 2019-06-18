@@ -514,7 +514,7 @@
 <p class="intro">¡Bien! ¡Hemos terminado!</p>
 <h2>El costo estimado de tu web es<br>
 <span class="claim">
-<span class="js--total-price">-</span>
+<span class="js--total-price" id="respuesta11">-</span>
 </span>
 </h2>
 <div class="results-container">
@@ -623,10 +623,11 @@
 </ul>
 </div>
 <p>En Jaguar X tenemos los mejores <strong>desarrolladores de apps y webs</strong> para tu proyecto. <button class="button button-3d nomargin" type="button" onclick="document.getElementById('template-contactform2').style.display='block'; myFunction()" style="background-image:linear-gradient(to left, #F18052, #F18052)">Contáctanos</button>
-<span class="link results-restart js--restart" onclick="hideShowFunction12()">← Volver a empezar</span>
+</p>
+    <span class="link results-restart js--restart" onclick="hideShowFunction12()">← Volver a empezar</span>
 <div class="content nobottommargin">
     <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
-    <form class="nobottommargin" id="template-contactform2" name="template-contactform2" action="include/sendemail.php" method="post" style="display: none">
+    <form class="nobottommargin" id="template-contactform2" name="template-contactform2" action="include/sendemail.php" method="post" style="display: none" accept-charset="UTF-8">
 
         <div class="form-process"></div>
 
@@ -644,21 +645,10 @@
             <label for="template-contactform-phone">Número telefónico </label>
             <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
         </div>
-
+        
         <div class="col_full hidden">
                 <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
             </div>
-        <div class="col_full">
-            <input type="text" id="answer1" name="answer1" value="" disabled />
-            <a id="answer2" name="answer2"></a>
-            <a id="answer3"></a>
-            <a id="answer4"></a>
-            <a id="answer5"></a>
-            <a id="answer6"></a>
-            <a id="answer7"></a>
-            <a id="answer8"></a>
-            <a id="answer9"></a>
-            <a id="answer10"></a>
             <script>
                 function myFunction() {
                 answ1 = document.getElementById("respuesta1").innerHTML;
@@ -671,22 +661,20 @@
                 answ8 = document.getElementById("respuesta8").innerHTML;
                 answ9 = document.getElementById("respuesta9").innerHTML;
                 answ10 = document.getElementById("respuesta10").innerHTML;
-                document.getElementById("answer1").innerHTML = answ1;
-                document.getElementById("answer2").innerHTML = answ2;
-                document.getElementById("answer3").innerHTML = answ3;
-                document.getElementById("answer4").innerHTML = "¿pagos? " + answ4;
-                document.getElementById("answer5").innerHTML = "¿integrado? " + answ5;
-                document.getElementById("answer6").innerHTML = "¿login? " + answ6;
-                document.getElementById("answer7").innerHTML = "¿multidioma? " + answ7;
-                document.getElementById("answer8").innerHTML = "¿directorio? " + answ8;
-                document.getElementById("answer9").innerHTML = "¿SEO? " + answ9;
-                document.getElementById("answer10").innerHTML = answ10;
+                answ11 = document.getElementById("respuesta11").innerHTML;
+                document.getElementById("template-contactform-message").innerHTML = "- Tipo de web: " + answ1 + "\n- Diseño de la web: " + 
+                answ2 + "\n- Tamaño: " 
+                + answ3 + "\n- Pagos: " + answ4  + "\n- Integraciones: " + answ5 + "\n- Login: " + answ6 + "\n- Multidioma: " + answ7 
+                + "\n- Directorio o buscador: " +  answ8 + "\n- Servicios de SEO: " + answ9 + "\n- Estatus: " + answ10 + "\n- Costo estimado:" + answ11;                
             }
             </script>
+        <div class="col_full">
+            <label for="template-contactform-message">Tus respuestas:</label>
+            <textarea class="sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="15"></textarea>
         </div>
         <div class="col_full">
             <label for="template-contactform-message">Describe un poco más a detalle tu proyecto:</label>
-            <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+            <textarea class="required sm-form-control" id="template-contactform-message2" name="template-contactform-message2" rows="6" cols="30"></textarea>
         </div>
 
         <div class="col_full">
@@ -827,7 +815,7 @@
         document.getElementById('oc33').style.display='flex';
         document.getElementById('oc34').style.display='flex';
         document.getElementById('cargando10').style.display='none';
-    
+        window.location.reload();    
     }
 </script>
 <div id="config" data-type="web" data-lang="es" data-pph="30" data-multi="true" data-curr-symbol="$" data-curr-symbol-before="true" data-curr-thousands="." data-curr-decimal="," data-curr-exchange="1"></div>
