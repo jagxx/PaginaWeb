@@ -133,7 +133,7 @@
 									padding: 0 22px;
 									font-size: 14px;
 									height: 40px; background-image: linear-gradient(to left, #F18052, #F18052);">Calcular costo</button>
-									<p id="text1" style="margin: 0 0 0; margin-bottom: 0px; cursor: pointer;" href="#div_webpage"> Más información </p>
+									<p id="text1" style="margin: 0 0 0; margin-bottom: 0px; cursor: pointer; font-family: sans-serif;"> Más información </p>
 								</div>
 							</div>
 
@@ -154,7 +154,7 @@
 										padding: 0 22px;
 										font-size: 14px;
 										height: 40px; background-image: linear-gradient(to left, #F18052, #F18052);">Calcular costo</button>
-										<p id="text3" style="margin: 0 0 0; margin-bottom: 0px; cursor: pointer;"> Más información </p>
+										<p id="text3" style="margin: 0 0 0; margin-bottom: 0px; cursor: pointer; font-family: sans-serif;"> Más información </p>
 								</div>
 							</div>
 
@@ -174,11 +174,7 @@
 										padding: 0 22px;
 										font-size: 14px;
 										height: 40px; background-image: linear-gradient(to left, #F18052, #F18052);">Calcular costo</button>
-										<p id="text2" style="margin: 0 0 0; margin-bottom: 0px; cursor: pointer;-moz-transition:0.1s height 0.9s;
-										-ms-transition:0.1s height 0.9s;
-										-o-transition:0.1s height 0.9s;
-										-webkit-transition:0.1s height 0.9s;
-										transition:0.1s height 0.9s;"> Más información </p>
+										<p id="text2" style="margin: 0 0 0; margin-bottom: 0px; cursor: pointer;font-family: sans-serif;"> Más información </p>
 								</div>
 							</div>
 
@@ -407,6 +403,9 @@
 									$('#div_program').show(2000);
 									$('#div_webpage').hide();
 									$('#div_app').hide();
+									$('html,body').animate({
+        							scrollTop: $("#div_program").offset().top
+    								}, 1500);
 							}
 									
 								});
@@ -425,6 +424,9 @@
 									$('#div_app').show(2000);
 									$('#div_webpage').hide();
 									$('#div_program').hide();
+									$('html,body').animate({
+        							scrollTop: $("#div_app").offset().top
+    								}, 1500);
 							}
 									
 								});
@@ -443,6 +445,9 @@
 									$('#div_webpage').show(2000);
 									$('#div_app').hide();
 									$('#div_program').hide();
+									$('html,body').animate({
+        							scrollTop: $("#div_webpage").offset().top
+    								}, 1500);
 							}
 									
 								});
