@@ -60,7 +60,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
             $referrer = $_SERVER['HTTP_REFERER'] ? '<br><br><br>This Form was submitted from: ' . $_SERVER['HTTP_REFERER'] : '';
 
-            $body = "$name $email $phone $phone3 $phone4 $phone5 $phone6 $phone7 $phone8 $phone9 $phone10 $phone11 $phone12 $phone13 $phone14 $message2 $service $referrer";
+            $body = "$name $email $phone $phone3 $phone4 $phone5 $phone6 $phone7 $phone8 $phone9 $phone10 $phone11 $phone12 $phone13 $phone14 $message2 $referrer";
 
             $mail->MsgHTML( $body );
             $mail->CharSet = "UTF­8";
