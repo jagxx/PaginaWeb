@@ -364,17 +364,17 @@
     </div>                
 </div>
 <div id="cargando6" style="display: none; position: absolute; background: white url(img/indicator.gif) no-repeat center center; top: 0; left: 0;  width: 100%; height: 100%;"></div><div class="answer-group row-of-3"><div class="col">
-<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1" id="oc18" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc18').style.display='none'">
+<div class="answer js--answer" data-answer-id="1" data-answer-weight="1.1" id="oc18" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc18').style.display='none'; testFunction()">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-6-1.png" alt="Sí">
 <span class="answer-text">Diseño Básico</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc19" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc19').style.display='none'">
+<div class="answer js--answer" data-answer-id="2" data-answer-weight="1" id="oc19" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc19').style.display='none'; testFunction()">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-6-2.png" alt="No">
 <span class="answer-text">Sin diseño</span>
 </div>
 </div><div class="col">
-<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.2" id="oc20" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc20').style.display='none'">
+<div class="answer js--answer" data-answer-id="3" data-answer-weight="1.2" id="oc20" onclick="document.getElementById('cargando6').style.display='block'; document.getElementById('oc20').style.display='none'; testFunction()">
 <img class="answer-image js--answer-image" src="img/web/intro.png" data-src="img/web/answer-6-3.png" alt="No lo sé">
 <span class="answer-text">Diseño a Medida</span>
 </div>
@@ -396,7 +396,7 @@
 <span class="result-question">¿Qué tipo de programa estás buscando?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta1"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform-program').style.display='none'; hideShowFunction()">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform2').style.display='none'; hideShowFunction()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -406,7 +406,7 @@
 <span class="result-question">¿Necesitas una base de datos? </span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta2"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform-program').style.display='none'; hideShowFunction2()">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform2').style.display='none'; hideShowFunction2()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -416,7 +416,7 @@
 <span class="result-question">¿Cuál es el volumen de gestión de datos que requiere tu programa? </span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta3"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform-program').style.display='none'; hideShowFunction3()">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform2').style.display='none'; hideShowFunction3()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -426,7 +426,7 @@
 <span class="result-question">¿El programa va a necesitar interfaz de usuario?</span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta4"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform-program').style.display='none'; hideShowFunction4()">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform2').style.display='none'; hideShowFunction4()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -436,7 +436,7 @@
 <span class="result-question">¿Necesitas incorporar un panel administrativo para tu programa? </span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta5"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform-program').style.display='none'; hideShowFunction5()">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform2').style.display='none'; hideShowFunction5()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -446,7 +446,7 @@
 <span class="result-question">¿Qué estilo de diseño necesitas? </span>
 <span>
 <b class="result-answer js--result-answer" id="respuesta6"></b>
-<span class="result-change js--change" onclick="document.getElementById('template-contactform-program').style.display='none'; hideShowFunction7()">Cambiar</span>
+<span class="result-change js--change" onclick="document.getElementById('template-contactform2').style.display='none'; hideShowFunction7()">Cambiar</span>
 </span>
 </div>
 </li>
@@ -492,6 +492,11 @@
                 answ2 + "\n- Volumen de datos: " + answ3 + "\n- Interfaz: " + answ4  + "\n- Panel admin: " + answ5 + "\n- Diseño: " 
                 + answ6 + "\n- Costo estimado: " + answ7;                
             }
+                function testFunction() {
+                    a = document.getElementById("respuesta7").innerHTML;
+                    res = a.replace(".", ",");
+                    document.getElementById("respuesta7").innerHTML = res;
+                }
             </script>
         <div class="col_full">
             <label for="template-contactform-message">Tus respuestas:</label>
@@ -596,7 +601,7 @@
         document.getElementById('oc18').style.display='flex';
         document.getElementById('oc19').style.display='flex';
         document.getElementById('oc20').style.display='flex';
-        document.getElementById('cargando5').style.display='none';
+        document.getElementById('cargando6').style.display='none';
     }
 </script>
 <div id="config" data-type="web" data-lang="es" data-pph="30" data-multi="true" data-curr-symbol="$" data-curr-symbol-before="true" data-curr-thousands="." data-curr-decimal="," data-curr-exchange="1"></div>
