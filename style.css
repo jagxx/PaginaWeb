@@ -8,9 +8,6 @@
 	Version: 3.1.1
 
 -----------------------------------------------------------------------------------*/
-a, p, h1, h2, h3, h4, h5, li, ul, span, strong, b {
-	text-align: justify;
-}
 
 dl, dt, dd, ol, ul, li {
 	margin: 0;
