@@ -9,6 +9,18 @@
 
 -----------------------------------------------------------------------------------*/
 
+@media only screen and (min-width: 760px){
+	.min_screen {
+		text-align: right;
+	}
+}
+
+@media only screen and (max-width: 760px){
+	.min_screen {
+		text-align: center;
+	}
+}
+
 dl, dt, dd, ol, ul, li {
 	margin: 0;
 	padding: 0;
