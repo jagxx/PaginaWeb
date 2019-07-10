@@ -128,7 +128,7 @@
 									<img src="img/webpage.png" alt="webpage">
 								</div>
 								<div class="pricing-action">
-									<button onClick="window.location.href='calculadora_web.html'" class="button" style="margin: 5px;
+									<button onClick="acept_tyc3();" class="button" style="margin: 5px;
 									padding: 0 22px;
 									font-size: 14px;
 									height: 40px; background-image: linear-gradient(to left, #F18052, #F18052);">Calcular costo</button>
@@ -155,7 +155,7 @@
 										<img src="img/erp.png" alt="erp">
 									</div>
 								<div class="pricing-action">
-										<button onClick="window.location.href='calculadora_program.html'" class="button" style="margin: 5px;
+										<button onClick="acept_tyc2();" class="button" style="margin: 5px;
 										padding: 0 22px;
 										font-size: 14px;
 										height: 40px; background-image: linear-gradient(to left, #F18052, #F18052);">Calcular costo</button>
@@ -181,7 +181,7 @@
 										<img src="img/mobileapp.png" alt="app">
 									</div>
 								<div class="pricing-action">
-										<button onClick="window.location.href='calculadora_app.html'" class="button" style="margin: 5px;
+										<button onClick="acept_tyc1();" class="button" style="margin: 5px;
 										padding: 0 22px;
 										font-size: 14px;
 										height: 40px; background-image: linear-gradient(to left, #F18052, #F18052);">Calcular costo</button>
@@ -196,6 +196,38 @@
 							</div>
 
 						</div>
+						<div class="col-md-12" style="text-align: center">
+								<input type="checkbox" id="TyC" name="TyC" value="TyC">Acepto el <a href="aviso_privacidad.html" style="color: blue">"Aviso de privacidad"</a> y los <a href="terminosycondiciones.html" style="color: blue">"Términos y condiciones"</a> de Jaguarx S.A. de C.V.<br>
+						</div>
+						<script>
+							function acept_tyc1() {
+								checkbox_tyc = document.getElementById("TyC");
+								if (checkbox_tyc.checked == true) {
+									window.location.href='calculadora_app.html'
+								}
+								else {
+									alert("Debe aceptar los términos y condiciones y el aviso de privacidad para poder continuar.")
+								}
+							}
+							function acept_tyc2() {
+								checkbox_tyc = document.getElementById("TyC");
+								if (checkbox_tyc.checked == true) {
+									window.location.href='calculadora_program.html'
+								}
+								else {
+									alert("Debe aceptar los términos y condiciones y el aviso de privacidad para poder continuar.")
+								}
+							}
+							function acept_tyc3() {
+								checkbox_tyc = document.getElementById("TyC");
+								if (checkbox_tyc.checked == true) {
+									window.location.href='calculadora_web.html'
+								}
+								else {
+									alert("Debe aceptar los términos y condiciones y el aviso de privacidad para poder continuar.")
+								}
+							}
+						</script>
 
 					</div>
 					<div class="content-wrap" id="div_webpage" style="display: none;">
